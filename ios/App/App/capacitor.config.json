@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.sacandidatesample",
+	"appName": "sa-candidate-sample",
+	"webDir": "dist",
+	"bundledWebRuntime": false
+}
