@@ -1,0 +1,7 @@
+{
+  "name": "sa-candidate-sample",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
