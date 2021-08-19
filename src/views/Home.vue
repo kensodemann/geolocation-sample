@@ -14,8 +14,7 @@
       </ion-header>
 
       <div id="container">
-        <div>Latitude: {{ latitude }}</div>
-        <div>Longitude: {{ longitude }}</div>
+        <AppLocation></AppLocation>
       </div>
     </ion-content>
   </ion-page>
@@ -24,24 +23,17 @@
 <script lang="ts">
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
 import { defineComponent } from 'vue';
-import useLocation from '@/use/location';
+import AppLocation from '@/components/AppLocation.vue';
 
 export default defineComponent({
   name: 'Home',
   components: {
+    AppLocation,
     IonContent,
     IonHeader,
     IonPage,
     IonTitle,
     IonToolbar,
-  },
-  setup() {
-    const { latitude, longitude } = useLocation();
-
-    return {
-      latitude,
-      longitude,
-    };
   },
 });
 </script>
