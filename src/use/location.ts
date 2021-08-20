@@ -12,13 +12,6 @@ export default () => {
     });
   };
 
-  const requestPermissions = () => {
-    Geolocation.requestPermissions().then((p: PermissionStatus) => {
-      console.log(p);
-      needsPermission.value = p.location === 'denied';
-    });
-  };
-
   Geolocation.watchPosition({}, (position: Position | null) => {
     if (position) {
       latitude.value = position.coords.latitude;
@@ -32,6 +25,5 @@ export default () => {
     latitude,
     longitude,
     needsPermission,
-    requestPermissions,
   };
 };

@@ -1,5 +1,5 @@
 <template>
-  <ion-button v-if="needsPermission" @click="requestPermissions">Request Permission</ion-button>
+  <div v-if="needsPermission" @click="requestPermissions">Allow location tracking to see location</div>
   <div v-else>
     <div>Latitude: {{ latitude }}</div>
     <div>Longitude: {{ longitude }}</div>
@@ -8,22 +8,17 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { IonButton } from '@ionic/vue';
 import useLocation from '@/use/location';
 
 export default defineComponent({
   name: 'AppLocation',
-  components: {
-    IonButton,
-  },
   setup() {
-    const { latitude, longitude, needsPermission, requestPermissions } = useLocation();
+    const { latitude, longitude, needsPermission } = useLocation();
 
     return {
       latitude,
       longitude,
       needsPermission,
-      requestPermissions,
     };
   },
 });
